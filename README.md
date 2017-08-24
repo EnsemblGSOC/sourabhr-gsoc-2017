@@ -9,12 +9,10 @@
 
 | Format | Explanation | Parsing|
 |---|---|---|
-| Bigwig | https://genome.ucsc.edu/goldenpath/help/bigWig.html |--|
-| Bigbed | https://genome.ucsc.edu/goldenpath/help/bigBed.html |--|
-| tabix VCF | https://genome.ucsc.edu/goldenpath/help/vcf.html |--|
-| Wiggle | https://genome.ucsc.edu/goldenpath/help/wiggle.html |--|
-| Bed | https://genome.ucsc.edu/FAQ/FAQformat.html#format1 |--|
-
+| Bigwig | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG.md |--|
+| BED | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGBED/BED.md |--|
+| tabix VCF | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF.md |--|
+| Wiggle | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG.md |--|
 
 ### What work was done ?
 
