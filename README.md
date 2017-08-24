@@ -9,7 +9,7 @@
 
 | Format | Explanation | Parsing|
 |---|---|---|
-| Bigwig | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG.md | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG_parsing.md|
+| Bigwig | formats/BIGWIG/BIGWIG.md | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG_parsing.md|
 | BED | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGBED/BED.md |--|
 | tabix VCF | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF.md |--|
 | Wiggle | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG.md |--|
