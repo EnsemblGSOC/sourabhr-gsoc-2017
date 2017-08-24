@@ -7,12 +7,12 @@
 
 ### File Format Explanations and Parsing :
 
-| Format | Explanation | Parsing|
-|---|---|---|
-| Bigwig | [formats/BIGWIG/BIGWIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG.md) | [formats/BIGWIG/BIGWIG\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG_parsing.md)|
-| BED | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGBED/BED.md |--|
-| tabix VCF | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF.md |--|
-| Wiggle | https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG.md |--|
+|Explanation | Parsing|
+|---|---|
+|[BIGWIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG.md) | [BIGWIG\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG_parsing.md)|
+|[BED.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGBED/BED.md) |--|
+|[VCF.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF.md) |--|
+|[WIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG.md) |--|
 
 ### What work was done ?
 
