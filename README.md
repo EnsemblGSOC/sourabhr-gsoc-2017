@@ -40,3 +40,22 @@ I wrote a webapp to compare the speed and verify the correctness of my Bigwig an
 ### Current State of the Project 
 
 The goals for this project have been accomplished, support for required file formats has been achieved. 
+
+### Code Usage :
+
+```
+Genoverse.Track.File.BIGWIG.extend({
+  name : 'bigwig-demo',
+  url  : 'path/to/bigwig/file'
+});
+```
+
+The above example holds true for all other file formats as well by just replacing BIGWIG with the appropriate symbol , so for BED it would be : 
+
+```
+Genoverse.Track.File.BED.extend({
+  name : 'bigwig-test',
+  url  : 'path/to/bed/file'
+})
+```
+
