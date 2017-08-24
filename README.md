@@ -7,7 +7,7 @@
 
 ### What work was done ?
 
-I first researched the existing C++ libraries that could do the job (HTSLib, libBigwig) and tried to port them to javascript using [emscripten](https://github.com/kripken/emscripten) but I quickly realized that this was the more tedious and unreliable approach as emscripten doesn't convert C++ to javascript perfectly, the resulting code is almost human unreadable hence not maintainable. I dropped this idea and decided to write my own parsers taking inspiration from already existing open source implementations : [dalliance](https://github.com/dasmoth/dalliance), [libBigWig](https://github.com/dpryan79/libBigWig). I understood the logic and implemented my own parsers there after. I wrote javascript parsers and the rendering code for the file formats mentioned above. In some cases there was some code lying around in Genoverse which I partially reused, in most cases I had to write code from scratch. 
+I first researched the existing C++ libraries that could do the job (HTSLib, libBigwig) and tried porting them to javascript using [emscripten](https://github.com/kripken/emscripten) but I quickly realized that this was the more tedious and unreliable approach as emscripten doesn't convert C++ to javascript perfectly, the resulting code is almost human unreadable hence not maintainable. I dropped this idea and decided to write my own parsers taking inspiration from already existing open source implementations : [dalliance](https://github.com/dasmoth/dalliance), [libBigWig](https://github.com/dpryan79/libBigWig). I understood the logic and implemented my own parsers there after. I wrote javascript parsers and the rendering code for the file formats mentioned above. In some cases there was some code lying around in Genoverse which I partially reused, in most cases I had to write code from scratch. 
 
 I enabled support for BigWig, BigBed, compressed VCF, Wiggle and BED formats in Genoverse. 
 
@@ -56,7 +56,7 @@ The above example holds true for all other file formats as well by just replacin
 
 ```
 Genoverse.Track.File.BED.extend({
-  name : 'bigwig-test',
+  name : 'bigbed-demo',
   url  : 'path/to/bed/file'
 })
 ```
