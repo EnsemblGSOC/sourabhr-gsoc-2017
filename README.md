@@ -54,6 +54,10 @@ The below pull requests were either directly merged into the main repo or manual
 
 I wrote a webapp to compare the speed and verify the correctness of my Bigwig and Bigbed parsers against [dalliance](https://github.com/dasmoth/dalliance)'s parsers. First both scripts were run in the same page which led to the problem of one script using the other one's cache hence leading to false timing analysis. I tried disabling the cache and putting them in seperate windows but the timings don't follow a set pattern as network requests could take random times to finish. Due to this reason this code wasn't merged into the main repo but rather kept away as an experiment. 
 
+### Testing setup :
+
+I initially setup a jasmine + karma test suite and automated the testing through travis-CI so that every time I commit code to the repository it gets checked. The main repo had a mocha testing environment already in place which was pushed later so I have to rewrite my tests in mocha. 
+
 ### Code Usage :
 
 To add a track in the newly supported formats :
