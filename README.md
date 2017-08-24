@@ -5,14 +5,15 @@
 
 [Genoverse](https://github.com/wtsi-web/Genoverse) is a genome browser written in javascript and my job was to enable support for large binary file formats like [BigWig](https://genome.ucsc.edu/goldenpath/help/bigWig.html), [BigBed](https://genome.ucsc.edu/goldenpath/help/bigBed.html), [compressed VCF](https://genome.ucsc.edu/goldenpath/help/vcf.html). In the process I also enabled support for [Wiggle](https://genome.ucsc.edu/goldenpath/help/wiggle.html) and [BED](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) as these were required for the binary versions (Bigwig and Bigbed) to work and made the code structure simpler. The simple VCF support was already in place so I just had to work on parsing the binary format. 
 
-### File Format Specifications :
-| format | specification |
-|---|---|
-| Bigwig | https://genome.ucsc.edu/goldenpath/help/bigWig.html |
-| Bigbed | https://genome.ucsc.edu/goldenpath/help/bigBed.html |
-| tabix VCF | https://genome.ucsc.edu/goldenpath/help/vcf.html |
-| Wiggle | https://genome.ucsc.edu/goldenpath/help/wiggle.html |
-| Bed | https://genome.ucsc.edu/FAQ/FAQformat.html#format1 |
+### File Format Explanations and Parsing :
+
+| Format | Explanation | Parsing|
+|---|---|---|
+| Bigwig | https://genome.ucsc.edu/goldenpath/help/bigWig.html |--|
+| Bigbed | https://genome.ucsc.edu/goldenpath/help/bigBed.html |--|
+| tabix VCF | https://genome.ucsc.edu/goldenpath/help/vcf.html |--|
+| Wiggle | https://genome.ucsc.edu/goldenpath/help/wiggle.html |--|
+| Bed | https://genome.ucsc.edu/FAQ/FAQformat.html#format1 |--|
 
 
 ### What work was done ?
@@ -30,8 +31,10 @@ I enabled support for [BigWig]( https://genome.ucsc.edu/goldenpath/help/bigWig.h
 
 #### Method 2 ( local deployment )
 1) Clone this repository through git ``` git clone https://github.com/EnsemblGSOC/sourabhr-gsoc-2017.git ```
-2) Copy the contents of this folder to your server and load SERVER\_IP\_://Genoverse/expanded.html onto your browser
-3) Edit expanded.html to add a source track as demonstrated in [**code_usage**](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/edit/master/README.md#L61) section
+2) Copy the contents of this folder to your server and load SERVER\_IP://Genoverse/expanded.html onto your browser
+3) Edit expanded.html to add a source track as demonstrated in [**code\_usage**](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/edit/master/README.md#L61) 
+4) Save expanded.html and reload to see a new track of the type you have chosen.
+Keep changing the URLs in the added track source to experiment with 
 
 ### What code got merged ?
 
