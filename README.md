@@ -37,10 +37,6 @@ The below pull requests were either directly merged into the main repo or manual
 
 I wrote a webapp to compare the speed and verify the correctness of my Bigwig and Bigbed parsers against [dalliance](https://github.com/dasmoth/dalliance)'s parsers. First both scripts were run in the same page which led to the problem of one script using the other one's cache hence leading to false timing analysis. I tried disabling the cache and putting them in seperate windows but the timings don't follow a set pattern as network requests could take random times to finish. Due to this reason this code wasn't merged into the main repo but rather kept away as an experiment. 
 
-### Current State of the Project 
-
-The goals for this project have been accomplished, support for required file formats has been achieved. 
-
 ### Code Usage :
 
 To add a track in the newly supported formats :
@@ -66,3 +62,7 @@ You can use all of the normal track parameters like
 height : 100,
 ```
 to set track height etc options that work with normal Genoverse tracks. 
+
+### Current State of the Project 
+
+The goals for this project have been accomplished, support for required file formats has been achieved. 
