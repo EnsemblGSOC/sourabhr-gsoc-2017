@@ -10,7 +10,7 @@
 |Explanation | Parsing|
 |---|---|
 |[BIGWIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG.md) | [BIGWIG\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG_parsing.md)|
-|[BED.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGBED/BED.md) |--|
+|[BED.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BED/BED.md) |--|
 |[VCF.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF.md) |--|
 |[WIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG.md) |--|
 
