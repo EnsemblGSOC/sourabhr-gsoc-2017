@@ -31,7 +31,7 @@ I enabled support for [BigWig]( https://genome.ucsc.edu/goldenpath/help/bigWig.h
 #### Method 2 ( local deployment )
 1) Clone this repository through git ``` git clone https://github.com/EnsemblGSOC/sourabhr-gsoc-2017.git ```
 2) Copy the contents of this folder to your server and load SERVER\_IP\_://Genoverse/expanded.html onto your browser
-3) Edit expanded.html to add a source track as demonstrated in [**code_usage**](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/edit/master/README.md#L56) section
+3) Edit expanded.html to add a source track as demonstrated in [**code_usage**](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/edit/master/README.md#L61) section
 
 ### What code got merged ?
 
