@@ -43,6 +43,8 @@ The goals for this project have been accomplished, support for required file for
 
 ### Code Usage :
 
+To add a track in the newly supported formats :
+
 ```
 Genoverse.Track.File.BIGWIG.extend({
   name : 'bigwig-demo',
@@ -59,3 +61,8 @@ Genoverse.Track.File.BED.extend({
 })
 ```
 
+You can use all of the normal track parameters like 
+```
+height : 100,
+```
+to set track height etc options that work with normal Genoverse tracks. 
