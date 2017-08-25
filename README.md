@@ -7,25 +7,17 @@
 
 ### What work was done ?
 
-I first researched the existing C++ libraries used to parse these file formats  ([HTSLib](https://github.com/samtools/htslib), [libBigWig](https://github.com/dpryan79/libBigWig)) and ported them into javascript using [emscripten](https://github.com/kripken/emscripten). However I quickly realized that this approach was unreliable since emscripten doesn't convert C++ to javascript perfectly, and the resulting code is also almost human unreadable and hence not maintainable. I therefore reverted the original plan of writing my own parsers taking inspiration from already existing open source implementations : [dalliance](https://github.com/dasmoth/dalliance), [libBigWig](https://github.com/dpryan79/libBigWig). This required both [understanding of the structure of the binary file formats](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master/formats) and writing the javascript parsers themselves.
+I first researched the existing C++ libraries used to parse these file formats  ([HTSLib](https://github.com/samtools/htslib), [libBigWig](https://github.com/dpryan79/libBigWig)) and ported them into javascript using [emscripten](https://github.com/kripken/emscripten). However I quickly realized that this approach was unreliable since emscripten doesn't convert C++ to javascript perfectly, and the resulting code is also almost human unreadable and hence not maintainable. I therefore reverted the original plan of writing my own parsers taking inspiration from already existing open source implementations : [dalliance](https://github.com/dasmoth/dalliance), [libBigWig](https://github.com/dpryan79/libBigWig). This required both [understanding of the structure of the binary file formats](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master/README.md#L) and writing the javascript parsers themselves.
 
-#### File Format Explanations and Parsing :
-
-|Explanation | Parsing|
-|---|---|
-|[BIGWIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG.md) | [BIGWIG\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG_parsing.md)|
-|[BED.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BED/BED.md) |[BED\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BED/BED_parsing.md)|
-|[VCF.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF.md) |[VCF\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF_parsing.md)|
-|[WIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG.md) |[WIG\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG_parsing.md)|
-
- Finally I added support for rendering of these in Genoverse, either by reusing components of the existing Genoverse code base or by writing code from scratch:
+Finally I added support for rendering of these in Genoverse, either by reusing components of the existing Genoverse code base or by writing code from scratch:
 tabix indexed VCF: new parsing code, existing rendering code
 BigWig and Wiggle: new parsing code and extension of the preexisting Bar.lineGraph drawing code component
 (Big)Bed: new parsing code and new rendering code. 
 
 
-### Repository contributed to :
-[Genoverse](https://github.com/wtsi-web/Genoverse).
+### Current State of the Project
+
+The goals for this project have been accomplished in that support for [BigWig]( https://genome.ucsc.edu/goldenpath/help/bigWig.html), [BigBed](https://genome.ucsc.edu/goldenpath/help/bigBed.html), [compressed / tabix VCF](https://genome.ucsc.edu/goldenpath/help/vcf.html) , [Wiggle](https://genome.ucsc.edu/goldenpath/help/wiggle.html) and [BED]( https://genome.ucsc.edu/FAQ/FAQformat.html#format1) formats has been added to  Genoverse. 
 
 ### How to use ?
 
@@ -65,6 +57,14 @@ to set track height etc options that work with normal Genoverse tracks.
  4) Save expanded.html and reload to see a new track of the type you have chosen.
 You can change the url field in the added track source to try a different remote file.
 
+### Testing setup :
+
+I initially setup a jasmine + karma test suite and automated the testing through travis-CI so that everytime I committed additional code to the repository, travis automatically tested it to comply with certain test cases. During the course of my project a mocha testing environment within the the main Genoverse repo was made public and I have therefore not committed my testing suite to the main repo.
+
+
+### Repository contributed to :
+[Genoverse](https://github.com/wtsi-web/Genoverse).
+
 ### What code got merged ?
 
 The below pull requests were either automatically or manually merged into the main Genoverse repo by the [author](https://github.com/simonbrent).
@@ -87,13 +87,15 @@ I wrote a [webapp](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master
 
 The emscripten study work described above has not been committed. 
 
-### Testing setup :
+### File Format Explanations and Parsing :
 
-I initially setup a jasmine + karma test suite and automated the testing through travis-CI so that everytime I committed additional code to the repository, travis automatically tested it to comply with certain test cases. During the course of my project a mocha testing environment within the the main Genoverse repo was made public and I have therefore not committed my testing suite to the main repo.
+|Explanation | Parsing|
+|---|---|
+|[BIGWIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG.md) | [BIGWIG\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BIGWIG/BIGWIG_parsing.md)|
+|[BED.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BED/BED.md) |[BED\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/BED/BED_parsing.md)|
+|[VCF.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF.md) |[VCF\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF_parsing.md)|
+|[WIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG.md) |[WIG\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG_parsing.md)|
 
-### Current State of the Project
-
-The goals for this project have been accomplished in that support for [BigWig]( https://genome.ucsc.edu/goldenpath/help/bigWig.html), [BigBed](https://genome.ucsc.edu/goldenpath/help/bigBed.html), [compressed / tabix VCF](https://genome.ucsc.edu/goldenpath/help/vcf.html) , [Wiggle](https://genome.ucsc.edu/goldenpath/help/wiggle.html) and [BED]( https://genome.ucsc.edu/FAQ/FAQformat.html#format1) formats has been added to  Genoverse. 
 ### Challenges and Learning :
 
 The main challenge I faced was that I had absolutely no knowledge of bioinformatics when I started my GSoC project, but I got enormous amounts of help from my mentor and other members of my organization. I slowly learnt about the complexities of the project I had taken on, I learnt about NGS (Next Generation Sequencing) and how all these large binary file formats are important to genome researchers. Once I understood the importance it gave a new found sense of satisfaction to work on the project as I understood the impact my code would have.
