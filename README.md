@@ -72,13 +72,13 @@ The below pull requests were either automatically or manually merged into the ma
 
 #### List of pull requests
 
->| Link | Description |
->|---|---|
->| https://github.com/wtsi-web/Genoverse/pull/37 |  The binary VCF parser code was merged in this PR |
->| https://github.com/wtsi-web/Genoverse/pull/38 |  Added parsing and rendering for BED data |
->| https://github.com/wtsi-web/Genoverse/pull/39 |  Support added for Wiggle data |
->| https://github.com/wtsi-web/Genoverse/pull/40 |  Respect thickStart and thickEnd fields while displaying BED data |
->| https://github.com/wtsi-web/Genoverse/pull/42 |  Support added for Bigwig and Bigbed data |
+| Link | Description |
+|---|---|
+| https://github.com/wtsi-web/Genoverse/pull/37 |  The binary VCF parser code was merged in this PR |
+| https://github.com/wtsi-web/Genoverse/pull/38 |  Added parsing and rendering for BED data |
+| https://github.com/wtsi-web/Genoverse/pull/39 |  Support added for Wiggle data |
+| https://github.com/wtsi-web/Genoverse/pull/40 |  Respect thickStart and thickEnd fields while displaying BED data |
+| https://github.com/wtsi-web/Genoverse/pull/42 |  Support added for Bigwig and Bigbed data |
 
 #### [List of commits](https://github.com/wtsi-web/Genoverse/commits/gh-pages?author=sourabh2k15)
 
