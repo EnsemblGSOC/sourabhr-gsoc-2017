@@ -3,9 +3,13 @@
 
 ### Introduction
 
-[Genoverse](https://github.com/wtsi-web/Genoverse) is a genome browser written in javascript. My project was to enable support to Genoverse for large binary file formats such as  [BigWig](https://genome.ucsc.edu/goldenpath/help/bigWig.html), [BigBed](https://genome.ucsc.edu/goldenpath/help/bigBed.html), [compressed VCF](https://genome.ucsc.edu/goldenpath/help/vcf.html). In the process I also enabled support for [Wiggle](https://genome.ucsc.edu/goldenpath/help/wiggle.html) and [BED](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) as these were required for the binary versions (BigWig and BigBed respectively) to work. Genoverse already supported uncompressed VCF and [BAM](https://samtools.github.io/hts-specs/SAMv1.pdf) prior to the commencement of this project.
+[Genoverse](https://github.com/wtsi-web/Genoverse) is a genome browser written in javascript. My project was to add support to Genoverse for large binary file formats such as  [BigWig](https://genome.ucsc.edu/goldenpath/help/bigWig.html), [BigBed](https://genome.ucsc.edu/goldenpath/help/bigBed.html), [compressed VCF](https://genome.ucsc.edu/goldenpath/help/vcf.html). In the process I also enabled support for [Wiggle](https://genome.ucsc.edu/goldenpath/help/wiggle.html) and [BED](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) as these were required for the binary versions (BigWig and BigBed respectively) to work. Genoverse supported uncompressed VCF and [BAM](https://samtools.github.io/hts-specs/SAMv1.pdf) prior to the commencement of this project.
 
-### File Format Explanations and Parsing :
+### What work was done ?
+
+I first researched the existing C++ libraries used to parse these file formats  ([HTSLib](https://github.com/samtools/htslib), [libBigWig](https://github.com/dpryan79/libBigWig)) and ported them into javascript using [emscripten](https://github.com/kripken/emscripten). However I quickly realized that this approach was unreliable since emscripten doesn't convert C++ to javascript perfectly, and the resulting code is also almost human unreadable and hence not maintainable. I therefore reverted the original plan of writing my own parsers taking inspiration from already existing open source implementations : [dalliance](https://github.com/dasmoth/dalliance), [libBigWig](https://github.com/dpryan79/libBigWig). This required both [understanding of the structure of the binary file formats](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master/formats) and writing the javascript parsers themselves.
+
+#### File Format Explanations and Parsing :
 
 |Explanation | Parsing|
 |---|---|
@@ -14,12 +18,13 @@
 |[VCF.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF.md) |[VCF\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/VCF/VCF_parsing.md)|
 |[WIG.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG.md) |[WIG\_parsing.md](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/formats/WIG/WIG_parsing.md)|
 
-### What work was done ?
+ Finally I added support for rendering of these in Genoverse, either by reusing components of the existing Genoverse code base or by writing code from scratch:
+tabix indexed VCF: new parsing code, existing rendering code
+BigWig and Wiggle: new parsing code and extension of the preexisting Bar.lineGraph drawing code component
+(Big)Bed: new parsing code and new rendering code. 
 
-I first researched the existing C++ libraries used to parse these file formats  ([HTSLib](https://github.com/samtools/htslib), [libBigWig](https://github.com/dpryan79/libBigWig)) and ported them into javascript using [emscripten](https://github.com/kripken/emscripten). However I quickly realized that this approach was unreliable since emscripten doesn't convert C++ to javascript perfectly, and the resulting code is also almost human unreadable and hence not maintainable. I therefore reverted the original plan of writing my own parsers taking inspiration from already existing open source implementations : [dalliance](https://github.com/dasmoth/dalliance), [libBigWig](https://github.com/dpryan79/libBigWig). This required both understanding of the structure of the binary file formats and writing the javascript parsers themselves. Finally I added support for rendering of these in Genoverse, either by reusing components of the existing Genoverse code base or by writing code from scratch. For example, I used the already existing VCF rendering code and added my code for parsing compressed VCF on top of it in order to enable support for tabix indexed compressed VCF file format. In other cases like enabling support for BigWig I had to write the parser from scratch and for the rendering module I used code on top of the existing Bar.lineGraph component. For enabling BED support I had to write the parser and rendering code from scratch. 
 
-
-### Repository worked on :
+### Repository contributed to :
 [Genoverse](https://github.com/wtsi-web/Genoverse).
 
 ### How to use ?
@@ -33,8 +38,7 @@ This is suitable for small, uncompressed files but does also work with binary fi
 This is suitable for attachment of large files over http 
 1) Clone this repository through git ``` git clone https://github.com/EnsemblGSOC/sourabhr-gsoc-2017.git ```
 2) Copy the contents of this folder to your server and load SERVER\_IP://Genoverse/expanded.html onto your browser
-3) Edit expanded.html to add a source track as demonstrated below:
-To add a track in the newly supported formats :
+3) Edit expanded.html to add a source track. For example for BigWig file:
 
 ```
 Genoverse.Track.File.BIGWIG.extend({
@@ -43,7 +47,7 @@ Genoverse.Track.File.BIGWIG.extend({
 });
 ```
 
-The above example holds true for all other file formats as well by just replacing BIGWIG with the appropriate symbol , so for BED it would be : 
+For other formats replace BIGWIG with the appropriate data type, for example for BED it would be : 
 
 ```
 Genoverse.Track.File.BED.extend({
@@ -63,7 +67,7 @@ You can change the url field in the added track source to try a different remote
 
 ### What code got merged ?
 
-The below pull requests were either automatically or manually merged into the main repo by  the [author](https://github.com/simonbrent).
+The below pull requests were either automatically or manually merged into the main Genoverse repo by the [author](https://github.com/simonbrent).
 
 #### List of pull requests
 
@@ -79,13 +83,13 @@ The below pull requests were either automatically or manually merged into the ma
 
 ### What code didn't get merged ?
 
-I wrote a [webapp](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master/webapp) to compare the speed and verify the correctness of my Bigwig and Bigbed parsers for remote files by comparing the output against that from [dalliance](https://github.com/dasmoth/dalliance)'s parsers. This demonstrated that the contents were parsed correctly and showed that there was no apparent difference in performance of my parsers compared to those of dalliance. The variability in timings between different requests was however very large meaning that I cannot give accurate measurements of performance. The code has been committed to the Ensembl GSOC repository
+I wrote a [webapp](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master/webapp) to compare the speed and verify the correctness of my Bigwig and Bigbed parsers for remote files by comparing the output against that from [dalliance](https://github.com/dasmoth/dalliance)'s parsers. This demonstrated that the contents were parsed correctly and showed that there was no apparent difference in performance of my parsers compared to those of dalliance. The variability in timings between different requests was however very large meaning that I could not give accurate measurements of performance. The code has been committed to the Ensembl GSOC repository.
 
-The emscrypten study work described above has not been committed. 
+The emscripten study work described above has not been committed. 
 
 ### Testing setup :
 
-I initially setup a jasmine + karma test suite and automated the testing through travis-CI so that everytime I commited additional code to the repository, travis automatically tested it to comply with certain test cases. During the course of my project a mocha testing environment within the the main Genoverse repo was made public and I have therefore not committed my testing suite to it.
+I initially setup a jasmine + karma test suite and automated the testing through travis-CI so that everytime I committed additional code to the repository, travis automatically tested it to comply with certain test cases. During the course of my project a mocha testing environment within the the main Genoverse repo was made public and I have therefore not committed my testing suite to the main repo.
 
 ### Current State of the Project
 
