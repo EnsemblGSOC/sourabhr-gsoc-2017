@@ -17,7 +17,7 @@ so as the name says the step is fixed . What is a step ? well simply put the dis
     
     dataValue2
 
-### VariableSTep Wiggle 
+### VariableStep Wiggle 
 
 but what if all of my data is not at the same uniform distance from each other ? welcome to variable step where width of bars ( span is fixed ), but the step can be specified
 
