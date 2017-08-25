@@ -60,7 +60,7 @@ You can change the url field in the added track source to try a different remote
 
 ### Testing setup :
 
-I initially setup a jasmine + karma test suite and automated the testing through travis-CI so that everytime I committed additional code to the repository, travis automatically tested it to comply with certain test cases. During the course of my project a mocha testing environment within the the main Genoverse repo was made public and I have therefore not committed my testing suite to the main repo.
+I initially setup a jasmine + karma test suite and automated the testing through travis-CI so that everytime I committed additional code to the repository, travis automatically tested it to comply with certain [test cases](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master/webapp/js/tests). During the course of my project a mocha testing environment within the the main Genoverse repo was made public and I have therefore not committed my testing suite to the main repo.
 
 
 ### Repository contributed to :
