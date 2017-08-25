@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel='stylesheet' href="css/index.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="actions">
+                <div>
+                    <input type='file' id='file' onchange="fetch()"/>
+                </div>
+                <div>
+                    <input type='text' id='url' placeholder="enter URL "/>
+                    <button id="fetchURL" onClick='fetch()' >fetch</button>
+                </div>
+            </div>
+            <div class="actions">
+                <div>
+                    <span>chromID : </span><select id='chromids'><option>no chroms</option></select>
+                </div>
+                <div>
+                    <span>base range:</span><input type='text' id='low'/>-<input type='text' id='high'/>
+                    <button id='mine' onclick="query1()">this</button>
+                    <button id='dalliance' onclick="query2()">dalliance</button>
+                </div>
+            </div>
+            <div class='actions' id='result'>
+                <div id='div1'>
+                    <div id='debug1'></div>
+                    <canvas id='browser1' width=500 height=300></canvas>
+                </div>
+                <div id='div2'>
+                    <div id='debug2'></div>
+                    <canvas id='browser2' width=500 height=300></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dalliance part javascript-->
+        <script src='js/dalliance/bigwig.js'></script>
+        <script src='js/dalliance/sha1.js'></script>
+		<script src='js/dalliance/utils.js'></script>
+		<script src='js/dalliance/bin.js'></script>
+		<script src='js/dalliance/spans.js'></script>
+		<script src='js/dalliance/jszlib.js'></script>
+		<script src='js/dalliance/das.js'></script>
+		<script src='js/dalliance/color.js'></script>
+		<script src='js/dalliance/bigwig.js'></script>
+
+        <!-- Genoverse part javascript-->
+        <script src='js/jszlib.js'></script>
+        <script src='js/dataHolder.js'></script>
+        <script src='js/bbi.js'></script>
+        <script src='js/index.js'></script>
+    </body>
+</html>

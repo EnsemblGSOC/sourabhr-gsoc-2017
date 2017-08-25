@@ -1,0 +1,25 @@
+{
+  "name": "bigwig-parser",
+  "version": "1.0.0",
+  "description": "A javascript parser for bigwig genome annotation files . Explains the structure and process of parsing the files.",
+  "main": "my.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourabh2k15/bigwig-parser.git"
+  },
+  "author": "sourabh reddy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sourabh2k15/bigwig-parser/issues"
+  },
+  "homepage": "https://github.com/sourabh2k15/bigwig-parser#readme",
+  "devDependencies": {
+    "jasmine-core": "^2.6.4",
+    "karma": "^1.7.0",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-jasmine": "^1.1.0"
+  }
+}
