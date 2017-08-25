@@ -14,6 +14,8 @@
 
 ## Code explanation
 
+parser at js/lib/BWReader.js
+
 ## Initialization 
 
 #### BWReader.init()
