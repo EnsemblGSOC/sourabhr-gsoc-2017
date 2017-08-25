@@ -7,7 +7,7 @@ There are 3 types of wiggle files : fixedStep, variablStep and BedGraph.
 
 so as the name says the step is fixed . What is a step ? well simply put the distance between 2 adjacent bars is the step.
 
-ex: fixedStep  chrom=chrN
+    fixedStep  chrom=chrN
     
     start=position  step=stepInterval
     
@@ -21,7 +21,7 @@ ex: fixedStep  chrom=chrN
 
 but what if all of my data is not at the same uniform distance from each other ? welcome to variable step where width of bars ( span is fixed ), but the step can be specified
 
-ex: variableStep  chrom=chrN
+    variableStep  chrom=chrN
     
     [span=windowSize]
     
@@ -34,5 +34,5 @@ ex: variableStep  chrom=chrN
 
 then comes the most flexible wiggle where the bars can be any width wide and can be spaced any distance apart from each other.
 
-ex: chrom chromStart chromEnd dataValue
+    chrom chromStart chromEnd dataValue
 
