@@ -29,7 +29,7 @@ This is suitable for small, uncompressed files but does also work with binary fi
 
 #### Method 2 ( local deployment )
 This is suitable for attachment of large files over http 
-1) Clone this repository through git ``` git clone https://github.com/EnsemblGSOC/sourabhr-gsoc-2017.git ```
+1) Clone this repository through git ``` git clone https://github.com/wtsi-web/Genoverse.git ```
 2) Copy the contents of this folder to your server and load SERVER\_IP://Genoverse/expanded.html onto your browser
 3) Edit expanded.html to add a source track. For example for BigWig file:
 
