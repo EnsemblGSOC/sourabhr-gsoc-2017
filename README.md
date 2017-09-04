@@ -48,7 +48,7 @@ Genoverse.Track.File.BED.extend({
   url  : 'path/to/bed/file'
 })
 ```
-note : for indexed vcf files i.e vcf.gz files, you can add a normal VCF track with an additional gz : true option as follows :
+note : for indexed vcf files i.e vcf.gz files you must enable the `gz : true` option as follows:
 
 ```
 Genoverse.Track.File.VCF.extend({
