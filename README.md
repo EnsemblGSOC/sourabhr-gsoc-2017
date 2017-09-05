@@ -71,13 +71,18 @@ You can change the url field in the added track source to try a different remote
 
 I initially setup a jasmine + karma test suite and automated the testing through travis-CI so that everytime I committed additional code to the repository, travis automatically tested it to comply with certain [test cases](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master/webapp/js/tests). During the course of my project a mocha testing environment within the the main Genoverse repo was made public and I have therefore not committed my testing suite to the main repo.
 
-
 ### Repository contributed to :
 [Genoverse](https://github.com/wtsi-web/Genoverse).
 
 ### What code got merged ?
 
 The below pull requests were either automatically or manually merged into the main Genoverse repo by the [author](https://github.com/simonbrent).
+
+### Known bugs and further work:
+
+1. Performance of VCF parsing needs to be improved by making fewer network requests. This needs to be optimized as done in case of BIGWIG as follows : If we need data from blocks with indices `[1,3,4,7]` instead of sending 4 network requests we could send a single one from `1 to 7 + dataSize(7th block)`, this would enable remote vcf.gz files to be processed in real time.
+2. BED files without all 12 fields present are currently not being rendered.
+3. The present code fails to process some BIGBED files.  
 
 #### List of pull requests
 
