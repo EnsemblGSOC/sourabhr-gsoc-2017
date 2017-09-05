@@ -18,7 +18,7 @@ Finally I added support for rendering of these in Genoverse, either by reusing c
 
 ### Current State of the Project
 
-The goals for this project have been accomplished in that support for [BigWig]( https://genome.ucsc.edu/goldenpath/help/bigWig.html), [BigBed](https://genome.ucsc.edu/goldenpath/help/bigBed.html), [compressed / tabix VCF](https://genome.ucsc.edu/goldenpath/help/vcf.html) , [Wiggle](https://genome.ucsc.edu/goldenpath/help/wiggle.html) and [BED]( https://genome.ucsc.edu/FAQ/FAQformat.html#format1) formats has been added to  Genoverse. 
+The goals for this project have been accomplished in that support for [BigWig]( https://genome.ucsc.edu/goldenpath/help/bigWig.html), [BigBed](https://genome.ucsc.edu/goldenpath/help/bigBed.html), [compressed / tabix VCF](https://genome.ucsc.edu/goldenpath/help/vcf.html) , [Wiggle](https://genome.ucsc.edu/goldenpath/help/wiggle.html) and [BED]( https://genome.ucsc.edu/FAQ/FAQformat.html#format1) formats has been added to  Genoverse. Having said this there still are some [known bugs and further work](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/blob/master/README.md#known-bugs-and-further-work) is needed in the present code. 
 
 ### How to use ?
 
@@ -78,12 +78,6 @@ I initially setup a jasmine + karma test suite and automated the testing through
 
 The below pull requests were either automatically or manually merged into the main Genoverse repo by the [author](https://github.com/simonbrent).
 
-### Known bugs and further work:
-
-1. Performance of VCF parsing needs to be improved by making fewer network requests. This needs to be optimized as done in case of BIGWIG as follows : If we need data from blocks with indices `[1,3,4,7]` instead of sending 4 network requests we could send a single one from `1 to 7 + dataSize(7th block)`, this would enable remote vcf.gz files to be processed in real time.
-2. BED files without all 12 fields present are currently not being rendered.
-3. The present code fails to process some BIGBED files.  
-
 #### List of pull requests
 
 | Link | Description |
@@ -101,6 +95,12 @@ The below pull requests were either automatically or manually merged into the ma
 I wrote a [webapp](https://github.com/EnsemblGSOC/sourabhr-gsoc-2017/tree/master/webapp) to compare the speed and verify the correctness of my Bigwig and Bigbed parsers for remote files by comparing the output against that from [dalliance](https://github.com/dasmoth/dalliance)'s parsers. This demonstrated that the contents were parsed correctly and showed that there was no apparent difference in performance of my parsers compared to those of dalliance. The variability in timings between different requests was however very large meaning that I could not give accurate measurements of performance. The code has been committed to the Ensembl GSOC repository.
 
 The emscripten study work described above has not been committed. 
+
+### Known bugs and further work:
+
+1. Performance of VCF parsing needs to be improved by making fewer network requests. This needs to be optimized as done in case of BIGWIG as follows : If we need data from blocks with indices `[1,3,4,7]` instead of sending 4 network requests we could send a single one from `1 to 7 + dataSize(7th block)`, this would enable remote vcf.gz files to be processed in real time.
+2. BED files without all 12 fields present are currently not being rendered.
+3. The present code fails to process some BIGBED files.  
 
 ### File Format Explanations and Parsing :
 
